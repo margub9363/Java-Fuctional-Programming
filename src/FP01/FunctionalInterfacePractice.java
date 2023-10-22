@@ -32,6 +32,32 @@ public class FunctionalInterfacePractice {
 //        Unary Operator
 //        Unary Operator is a functional interface which will take the single input of any type and then return the output of same type with some operation performed in it.
         UnaryOperator<Integer> unaryOperator = x -> x*2;
+        System.out.println(unaryOperator.apply(23));
 
+//        Bipredicate
+//        This is a functional interface which will take two input and will return a boolean output
+        BiPredicate<Integer,String> biPredicate = (x,y) -> {
+            return x>10 && y.length() >10;
+        };
+        System.out.println(biPredicate.test(9,"abcd"));
+
+//        BiFunction
+//        BiFunction is a functional Interface which will take two inputs (here integer and String) and will return one output (here it is String)
+        BiFunction<Integer,String,String> biFunction = (x,y) -> {
+            return x+" "+y;
+        };
+
+        System.out.println(biFunction.apply(1,"One"));
+
+//       BiConsumer
+//       BiConsumer will take two input and will simply consume them
+         BiConsumer<String,String> biConsumer = (x,y) -> {
+            System.out.println(x);
+            System.out.println(y);
+        };
+         biConsumer.accept("Hello","World");
     }
+
+
+
 }
