@@ -1,7 +1,9 @@
 package src.FP01;
 
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class Course{
     private String name;
@@ -64,14 +66,14 @@ public class CustomClass {
 
         List<Course> courses = List.of(
                 new Course("Spring", "Framework", 98, 2000),
-                new Course("Spring Boot", "Framework", 95, 2000),
-                new Course("API", "Framework", 94, 2000),
-                new Course("Microservices", "Framework", 93, 2000),
-                new Course("FullStack", "Framework", 92, 2000),
-                new Course("AWS", "Framework", 91, 2000),
-                new Course("Azure", "Framework", 90, 2000),
-                new Course("Docker", "Framework", 89, 2000),
-                new Course("Kubernetes", "Framework", 88, 2000)
+                new Course("Spring Boot", "Framework", 95, 2001),
+                new Course("API", "Framework", 94, 2002),
+                new Course("Microservices", "Framework", 93, 2003),
+                new Course("FullStack", "Framework", 92, 2004),
+                new Course("AWS", "Framework", 91, 2015),
+                new Course("Azure", "Framework", 90, 2006),
+                new Course("Docker", "Framework", 89, 2007),
+                new Course("Kubernetes", "Framework", 88, 2008)
         );
 
 //        AllMatch
@@ -90,5 +92,15 @@ public class CustomClass {
 //        This is going to return true if non of them meet the criteria
         System.out.println(courses.stream().noneMatch(x -> x.getReviewScore()<88));
 //        o/p -> true
+
+
+//        Comparator
+        Comparator<Course> comparingByNoOfStudentsIncreasingOrder = Comparator.comparing(Course::getNoOfStudent);
+        System.out.println(courses.stream().sorted(comparingByNoOfStudentsIncreasingOrder).collect(Collectors.toList()));
+
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+        Comparator<Course> comparingByNoOfStudentsDecreasingOrder = Comparator.comparing(Course::getNoOfStudent).reversed();
+        System.out.println(courses.stream().sorted(comparingByNoOfStudentsDecreasingOrder).collect(Collectors.toList()));
     }
 }
