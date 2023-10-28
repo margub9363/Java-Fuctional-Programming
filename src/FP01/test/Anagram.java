@@ -1,29 +1,45 @@
 package src.FP01.test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Anagram {
     public static void main(String[] args) {
         /*
         4) List of Words :
-Listen
-Pot
-Alas
-Silent
-Top
-Output : Print sets of anagrams (Listen, Silent), (Pot, Top)
+            Listen
+            Pot
+            Alas
+            Silent
+            Top
+        Output : Print sets of anagrams (Listen, Silent), (Pot, Top)
 */
-        List<String> input = List.of("listen", "pot", "alas", "silent", "top");
-        List<char[]> inputInArrayFormat = input.stream().map(str -> str.toCharArray()).collect(Collectors.toList());
-        List<String > sortedString = new ArrayList<>();
-        for (char[] c: inputInArrayFormat) {
-            Arrays.sort(c);
-            sortedString.add(new String(c));
-        }
 
-}
+        List<String> input = List.of("listen", "pot", "alas", "silent", "top","dinu","indu");
+        Map<String,HashSet> output = new HashMap<>();
+        List<char[]> inCharArrayFormat = input.stream().map(word -> word.toCharArray()).collect(Collectors.toList());
+        String value;
+        String key;
+        for (char[] c:inCharArrayFormat) {
+            value = new String(c);
+            key = getString(c);
+            if(output.containsKey(key)) {
+                HashSet hashSet = output.get(key);
+                hashSet.add(value);
+                output.replace(key,hashSet);
+            }
+            else{
+                HashSet<String> hasSetValue = new HashSet<>();
+                hasSetValue.add(value);
+                output.put(key,new HashSet<>(hasSetValue));
+            }
+
+        }
+        System.out.println(output.values());
+    }
+
+    private static String getString(char[] inCharArrayFormat) {
+        Arrays.sort(inCharArrayFormat);
+        return new String(inCharArrayFormat);
+    }
 }
