@@ -12,17 +12,17 @@ public class ActualLogic {
         employeeList.add(new Employee("Rahman","27"));
         employeeList.add(new Employee("Rahman","27"));
         employeeList.add(new Employee("Rahman","27"));
+        employeeList.add(new Employee("Rahman","20"));
         employeeList.add(new Employee("Rahman","27"));
-        employeeList.add(new Employee("Rahman","27"));
         employeeList.add(new Employee("Margub","27"));
         employeeList.add(new Employee("Margub","27"));
         employeeList.add(new Employee("Margub","27"));
-        employeeList.add(new Employee("Margub","27"));
+        employeeList.add(new Employee("Margub","28"));
         employeeList.add(new Employee("Margub","27"));
 
-        Map<String ,Employee> distictEmpployees = new HashMap<>();
+        Map<Integer ,Employee> distictEmpployees = new HashMap<>();
         for (int i = 0; i < employeeList.size(); i++) {
-            distictEmpployees.put(employeeList.get(i).name,employeeList.get(i));
+            distictEmpployees.put(employeeList.get(i).hashCode(),employeeList.get(i));
         }
         System.out.println(distictEmpployees);
     }
