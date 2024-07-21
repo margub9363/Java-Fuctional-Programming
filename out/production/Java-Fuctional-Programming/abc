@@ -1,0 +1,1 @@
+abcdgpg -e -r YOUR_GPG_KEY_ID secrets.txt
