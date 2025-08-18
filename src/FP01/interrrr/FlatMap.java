@@ -5,7 +5,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-class FlatMap {
+class
+FlatMap {
 
     public static void main(String[] args) {
 

@@ -21,10 +21,6 @@ public class P2 {
         input2.stream().forEach(c-> logic(tracker,c));
 
         tracker.keySet().stream().forEach( k -> System.out.print(k+""+tracker.get(k)));
-        
-
-
-
 
     }
 

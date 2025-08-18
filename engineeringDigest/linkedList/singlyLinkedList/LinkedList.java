@@ -1,3 +1,5 @@
+package engineeringDigest.linkedList.singlyLinkedList;
+
 class LinkedList {
     // Node class to represent each element in the list
     static class Node {

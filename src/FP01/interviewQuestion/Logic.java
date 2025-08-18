@@ -17,7 +17,7 @@ public class Logic {
         customerdata.add(new Customer("Margub", "kaara", 700));
         customerdata.add(new Customer("Rocky", "Bangalore", 4000));
         customerdata.add(new Customer("Abc", "Pondy", 900));
-
+/*
 //        Display all the customer Details whose name starts with R
         customerdata.stream().filter(c -> c.getCustomerName().startsWith("R")).forEach(System.out::println);
 
@@ -39,8 +39,12 @@ public class Logic {
                     }
                     else System.out.println("Purchase amount after discount for Customer "+ c.getCustomerName() +" is : "+c.getPurchaseAmount());
                 }
-                );
+                );*/
 
+        Map<String, Long> cityCountMap = customerdata.stream()
+                .collect(Collectors.groupingBy(Customer::getCity, Collectors.counting()));
+
+        cityCountMap.forEach((city, count) -> System.out.println(city + " -> " + count));
     }
 }
 
