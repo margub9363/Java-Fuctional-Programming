@@ -1,7 +1,10 @@
 package src.FP01.test;
 
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
+// this program is for first repeating character.
 
 public class FirstNonRepeatingCharacter {
     public static void main(String[] args) {
