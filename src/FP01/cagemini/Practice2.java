@@ -3,6 +3,7 @@ package src.FP01.cagemini;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Practice2 {
@@ -12,7 +13,6 @@ public class Practice2 {
         List<Integer> inputList = new ArrayList<>();
         IntStream range = IntStream.range(1, 101);
         range.forEach(ip-> inputList.add(ip));
-//        inputList.stream().forEach(System.out::println);
 
 
         boolean flag = false;

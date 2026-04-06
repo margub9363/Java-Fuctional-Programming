@@ -1,6 +1,10 @@
 package src.FP01.practice2;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -17,10 +21,16 @@ public class ConvertingArrayIntoCollection {
 //        Stream<Character> charStream = IntStream.range(0, name.toCharArray().length).map(i -> name.toCharArray()[i]);
 //        intStream.forEach(System.out::println);
 
-        char[] charArray = {'a', 'b', 'c', 'd'};
-        Stream<Character> charStream = IntStream.range(0, charArray.length)
-                .mapToObj(i -> charArray[i]);
+//        char[] charArray = {'a', 'b', 'c', 'd'};
+//        Stream<Character> charStream = IntStream.range(0, charArray.length)
+//                .mapToObj(i -> charArray[i]);
+//
+//        charStream.forEach(x -> System.out.println(x));
 
-        charStream.forEach(System.out::println);
+        char[] charArray = "rahman".toCharArray();
+        List<Character> collect = IntStream.range(0, charArray.length).mapToObj(i -> charArray[i]).collect(Collectors.toList());
+        System.out.println(collect);
+        Map<Character, Long> collect1 = collect.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(collect1);
     }
 }

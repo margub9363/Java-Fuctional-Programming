@@ -6,7 +6,7 @@ package src.FP01.practice2;
 // 28 -> 1,2,4,7,14
 //6, 28, 496, 8128, 33550,
 public class CheckPerfectNumber {
-    public static void main(String[] args) {
+    public static void  main(String[] args) {
 
         int input = 496;
         int sumOfDivisor = 0;
