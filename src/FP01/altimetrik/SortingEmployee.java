@@ -1,9 +1,6 @@
 package src.FP01.altimetrik;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 class Employee {
     private String name;
@@ -49,7 +46,7 @@ class Employee {
                 '}';
     }
 }
-public class P1 {
+public class SortingEmployee {
     public static void main(String[] args) {
 
         List<Employee> empList =new ArrayList<>();
@@ -59,32 +56,9 @@ public class P1 {
         empList.add(new Employee(444,"Raj",1700));
         empList.add(new Employee(555,"Raj",900));
 
-/*
-        111 Sree 1000
-        222 Raj   2600
-        333 ram  700
-   */
-
-        Map<String , Employee> employeeMap = new HashMap<>();
-        empList.stream().forEach( employee -> { sortingEmployee(employee,employeeMap);
-        });
-        employeeMap.keySet().stream().forEach(e -> System.out.println(employeeMap.get(e)));
+        empList.stream().sorted(Comparator.comparing(Employee::getName).thenComparing(Employee::getSal)).forEach(System.out::println);
 
     }
-
-
-    public static Map<String , Employee>  sortingEmployee(Employee e, Map<String , Employee> employeeMap) {
-        Employee employeeData = null;
-        double existingSalary = 0;
-        if(employeeMap.get(e.getName()) != null) {
-            employeeData = employeeMap.get(e.getName());
-            existingSalary = employeeData.getSal();
-            employeeData.setSal(existingSalary + e.getSal());
-        }
-        else employeeMap.put(e.getName(),e);
-        return  employeeMap;
-    }
-
 }
 
 

@@ -5,7 +5,7 @@ Given a value of V Rs and an infinite supply of each of the denominations {1, 2,
    (int x[]={1, 2, 5, 10, 20, 50, 100, 500, 1000};   , don’t use any List/ArrayList/Set,etc.. to solve this)
 input :V=70 output:2
 */
-public class P3 {
+public class Denominations {
     public static void main(String[] args) {
      int [] denominations = new int[] {1, 2, 5, 10, 20, 50, 100, 500, 1000};
      int v = 72;
