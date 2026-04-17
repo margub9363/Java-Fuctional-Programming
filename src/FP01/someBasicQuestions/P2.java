@@ -1,4 +1,4 @@
-package src.FP01.test;
+package src.FP01.someBasicQuestions;
 
 //"Rahman"; <-- a
 public class P2 {

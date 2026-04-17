@@ -1,4 +1,4 @@
-package src.FP01.test2;
+package src.FP01.someBasicQuestions;
 
 public class Practicce123 {
     public static void main(String[] args) {

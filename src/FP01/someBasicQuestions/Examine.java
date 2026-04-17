@@ -1,4 +1,4 @@
-package src.FP01.test2;
+package src.FP01.someBasicQuestions;
 
 
 //First Non-repeating charatctor in a string - swiss ->>

@@ -1,4 +1,4 @@
-package src.FP01.test;
+package src.FP01.someBasicQuestions;
 
 // This is to program to count the  no of alphabets in a given string.
 public class WordCount {

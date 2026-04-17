@@ -1,4 +1,4 @@
-package src.FP01.test;
+package src.FP01.someBasicQuestions;
 
 // Finding Longest word that should has word length in even digits"
 public class LongestEvenCountWord {

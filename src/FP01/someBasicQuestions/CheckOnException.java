@@ -1,4 +1,4 @@
-package src.FP01.interrrr;
+package src.FP01.someBasicQuestions;
 
 public class CheckOnException {
     public static void main(String[] args) {

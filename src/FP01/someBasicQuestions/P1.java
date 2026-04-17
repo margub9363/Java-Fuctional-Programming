@@ -1,7 +1,5 @@
-package src.FP01.test;
+package src.FP01.someBasicQuestions;
 
-
-import src.FP01.comparatorPractice.Emp;
 
 import java.util.*;
 
