@@ -1,7 +1,7 @@
 package src.FP01.someBasicQuestions;
 
 //"Rahman"; <-- a
-public class P2 {
+public class FirstRepeatingCharacter {
     public static void main(String[] args) {
 
         String input = "rahman";
