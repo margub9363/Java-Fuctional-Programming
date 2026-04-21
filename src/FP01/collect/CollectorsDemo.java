@@ -94,5 +94,12 @@ public class CollectorsDemo {
         IntSummaryStatistics collect2 = items.values().stream().collect(Collectors.summarizingInt(x -> x));
         System.out.println(collect2);
 
+        // Counting Occurrences
+        System.out.println();
+        System.out.println("Counting Occurrences");
+        List<String> fruits = Arrays.asList("apple", "banana", "apple", "orange", "banana", "apple");
+        Map<String, Long> fruitsCount = fruits.stream().collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+        System.out.println(fruitsCount);
+
     }
 }
