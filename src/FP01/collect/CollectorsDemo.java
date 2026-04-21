@@ -1,11 +1,11 @@
 package src.FP01.collect;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class CollectorsDemo {
     public static void main(String[] args) {
+
         // 1 Collecting to a list
         List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
         List<String> res = names.stream().filter(name -> name.startsWith("A")).collect(Collectors.toList());
@@ -75,6 +75,14 @@ public class CollectorsDemo {
         String sentence = "hello world hello java world";
         Map<String, Long> countingWordOccurrence = Arrays.stream(sentence.split(" ")).collect(Collectors.groupingBy(x -> x, Collectors.counting()));
         System.out.println(countingWordOccurrence);
+
+        // ex3 Character Counts
+        System.out.println("Character Counts");
+        String input = "hello world hello java world";
+        List<Character> listOfCharacters = input.chars().mapToObj(c -> (char) c).filter(chr-> !chr.equals(' ')).collect(Collectors.toList());
+        System.out.println(listOfCharacters);
+        Map<Character, Long> charactersToCountMap = listOfCharacters.stream().collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+        System.out.println(charactersToCountMap);
 
 
     }
