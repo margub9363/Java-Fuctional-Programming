@@ -101,5 +101,10 @@ public class CollectorsDemo {
         Map<String, Long> fruitsCount = fruits.stream().collect(Collectors.groupingBy(x -> x, Collectors.counting()));
         System.out.println(fruitsCount);
 
+        // Collectors mappingBy << If you want to perform some operation on the values then this can be used
+        List<String> fruits2 = Arrays.asList("apple", "banana", "apple", "orange", "banana", "apple");
+        Map<String, List<String>> mappingBy =fruits2.stream().collect(Collectors.groupingBy(x -> x, Collectors.mapping(word -> word.toUpperCase(), Collectors.toList())));
+        System.out.println(mappingBy);
+
     }
 }
