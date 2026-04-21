@@ -84,6 +84,15 @@ public class CollectorsDemo {
         Map<Character, Long> charactersToCountMap = listOfCharacters.stream().collect(Collectors.groupingBy(x -> x, Collectors.counting()));
         System.out.println(charactersToCountMap);
 
+        // Summing Values in a Map
+        System.out.println();
+        Map<String, Integer> items = new HashMap<>();
+        items.put("Apple", 10);
+        items.put("Banana", 20);
+        items.put("Orange", 15);
+
+        IntSummaryStatistics collect2 = items.values().stream().collect(Collectors.summarizingInt(x -> x));
+        System.out.println(collect2);
 
     }
 }
